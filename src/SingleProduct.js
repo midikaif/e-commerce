@@ -1,6 +1,12 @@
+import React from 'react'
 import styled from "styled-components";
 
-return <Wrapper></Wrapper>;
+export default function SingleProduct() {
+  return (
+    <Wrapper></Wrapper>
+  )
+}
+
 
 const Wrapper = styled.section`
   .container {
@@ -74,5 +80,3 @@ const Wrapper = styled.section`
     padding: 0 2.4rem;
   }
 `;
-
-export default SingleProduct;
