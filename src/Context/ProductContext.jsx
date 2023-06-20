@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useReducer } from "react";
 import axios from "axios";
-import reducer from "../reducer/productReducer";
+import reducer from "../Reducer/Reducer";
 
 const AppContext = createContext();
 console.log(AppContext);
@@ -11,6 +11,9 @@ const initialState = {
   isError: false,
   products: [],
   featureProducts: [],
+  singleProduct: [],
+  isSingleLoading: false,
+  isSingleError: false
 };
 
 const AppProvider = ({ children }) => {
@@ -23,9 +26,20 @@ const AppProvider = ({ children }) => {
       const products = await res.data;
       dispatch({ type: "SET_API_DATA", payload: products });
     } catch (error) {
-      dispatch({ type: "API_ERROR" });
+      dispatch({ type: "API_ERROR", payload: error});
     }
   };
+
+  const getSingleProduct = async (url) => {
+    dispatch({type: 'SET_SINGLE_LOADING'});
+    try {
+      const res = await axios.get(url);
+      const singleProduct = await res.data;
+      dispatch({type: 'SET_SINGLE_PRODUCT', payload: singleProduct});
+    } catch (error) {
+      dispatch({type: 'SINGLE_ERROR', payload: error})
+    }
+  }
 
   useEffect(() => {
     getProducts(API);
