@@ -1,4 +1,4 @@
-const Reducer = (state, action) => {
+const productReducer = (state, action) => {
   // if (action.type === "SET_LOADING") {
   //   return {
   //     ...state,
@@ -48,15 +48,10 @@ const Reducer = (state, action) => {
       };
 
     case "SET_SINGLE_PRODUCT":
-      const singleProduct = action.payload.filter((curElem) => {
-        return curElem.featured === true;
-      });
-
       return {
         ...state,
-        isLoading: false,
-        products: action.payload,
-        featureProducts: singleProduct,
+        isSingleLoading: false,
+        singleProduct: action.payload,
       };
 
     case "SINGLE_ERROR":
@@ -71,4 +66,4 @@ const Reducer = (state, action) => {
   }
 };
 
-export default Reducer;
+export default productReducer;

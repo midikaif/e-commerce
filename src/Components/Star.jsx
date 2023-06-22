@@ -38,7 +38,7 @@ export default function Star({ stars, reviews }) {
     return (
         <Wrapper>
             <div className="icon-style">
-                {ratingStar}
+                {starRating}
                 <p>({reviews} customer reviews)</p>
             </div>
         </Wrapper>

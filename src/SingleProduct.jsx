@@ -1,7 +1,6 @@
 import { useEffect } from "react";
-import styled from "styled-Components";
 import { useParams } from "react-router-dom";
-import { useProductContext } from "./context/productcontex";
+import { useProductContext } from "./Context/ProductContext";
 import PageNavigation from "./Components/PageNavigation";
 import MyImage from "./Components/MyImage";
 import { Container } from "./styles/Container";
@@ -10,7 +9,8 @@ import { MdSecurity } from "react-icons/md";
 import { TbTruckDelivery, TbReplace } from "react-icons/tb";
 import Star from "./Components/Star";
 import { API } from "./Context/ProductContext";
-
+import AddToCart from "./Components/AddToCart";
+import styled from "styled-components";
 
 const SingleProduct = () => {
   const { getSingleProduct, isSingleLoading, singleProduct } =
@@ -36,7 +36,7 @@ const SingleProduct = () => {
   }, []);
 
   if (isSingleLoading) {
-    return <div className="page_loading">Loading.....</div>;
+    return <div className="page_loading">Single Loading.....</div>;
   }
 
   return (

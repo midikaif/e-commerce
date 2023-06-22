@@ -7,6 +7,7 @@ import { GlobalStyle } from "./GlobalStyle";
 import Footer from "./Components/Footer";
 import ErrorPage from './ErrorPage'
 import SingleProduct from "./SingleProduct";
+import Products from "./Products";
 
 
 const App = () => {
@@ -44,6 +45,7 @@ const App = () => {
 
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path='/products' element={<Products/>}/>
         <Route path="/products/:id" element={<SingleProduct />}/>
         <Route exact path="*" element={<ErrorPage />} />
       </Routes>

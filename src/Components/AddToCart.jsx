@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import { FaCheck } from "react-icons/fa";
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
+import CartAmountToggle from './CartAmountToggle';
+import {Button} from '../styles/Button'
 
 export default function AddToCart({ product }) {
     const { id, colors, stock } = product
@@ -76,11 +79,11 @@ export default function AddToCart({ product }) {
                     {colors.map((curr, i) => {
                         return (
                             <button
-                                key={index}
-                                style={{ backgroundColor: curColor }}
-                                className={color === curColor ? "btnStyle active" : "btnStyle"}
-                                onClick={() => setColor(curColor)}>
-                                {color === curColor ? <FaCheck className="checkStyle" /> : null}
+                                key={i}
+                                style={{ backgroundColor: curr }}
+                                className={color === curr ? "btnStyle active" : "btnStyle"}
+                                onClick={() => setColor(curr)}>
+                                {color === curr ? <FaCheck className="checkStyle" /> : null}
                             </button>
                         );
                     })}
