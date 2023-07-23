@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { useProductContext } from "./Context/ProductContext";
+import { useProductContext } from "./Context/productContext";
 import PageNavigation from "./Components/PageNavigation";
 import MyImage from "./Components/MyImage";
 import { Container } from "./styles/Container";
@@ -8,7 +8,7 @@ import FormatPrice from "./Helpers/FormatPrice";
 import { MdSecurity } from "react-icons/md";
 import { TbTruckDelivery, TbReplace } from "react-icons/tb";
 import Star from "./Components/Star";
-import { API } from "./Context/ProductContext";
+import { API } from "./Context/productContext";
 import AddToCart from "./Components/AddToCart";
 import styled from "styled-components";
 
